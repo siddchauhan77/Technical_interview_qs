@@ -1,0 +1,627 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Stat questions for Interviews</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="e5871198-327b-4712-ba43-bfda069a4c66" class="page sans"><header><h1 class="page-title"><strong>Stat questions for Interviews</strong></h1></header><div class="page-body"><ol id="ad407951-ac1d-4858-a1a7-07cb0f687d18" class="numbered-list" start="1"><li><strong>How do you assess the statistical significance of an insight?</strong></li></ol><p id="89b1f99a-fdd9-4c35-b677-7427b46f7ea6" class="">You would perform hypothesis testing to determine statistical significance. First, you would state the null hypothesis and alternative hypothesis. Second, you would calculate the p-value, the probability of obtaining the observed results of a test assuming that the null hypothesis is true. Last, you would set the level of the significance (alpha) and if the p-value is less than the alpha, you would reject the null — in other words, the result is statistically significant.</p><ol id="61340d17-4252-4978-9d2c-8633d99b78ca" class="numbered-list" start="1"><li><strong>Explain what a long-tailed distribution is and provide three examples of relevant phenomena that have long tails. Why are they important in classification and regression problems?</strong></li></ol><p id="b8f7e794-375e-43ad-a637-60a5b631b94e" class="">Image for post</p><p id="81e6bb46-d090-46b8-8913-e831a58091cc" class="">Example of a long tail distribution</p><p id="b96c1ee4-88e9-4fb1-b99a-b6b3ec4ada89" class="">A long-tailed distribution is a type of heavy-tailed distribution that has a tail (or tails) that drop off gradually and asymptotically.</p><p id="4e62fa5e-dc85-4a79-b9ad-fc87feb4e5fe" class="">3 practical examples include the power law, the Pareto principle (more commonly known as the 80–20 rule), and product sales (i.e. best selling products vs others).</p><p id="81b3dfe2-7991-4ca9-9a0b-1ba325f2e38e" class="">It’s important to be mindful of long-tailed distributions in classification and regression problems because the least frequently occurring values make up the majority of the population. This can ultimately change the way that you deal with outliers, and it also conflicts with some machine learning techniques with the assumption that the data is normally distributed.</p><ol id="64c9890d-62d0-4981-95f4-01c904045376" class="numbered-list" start="1"><li><strong>What is the Central Limit Theorem? Explain it. Why is it important?</strong></li></ol><p id="a531885c-f592-47b4-8957-71877ac5df2b" class="">Image for post</p><p id="a03448d4-820e-44e4-8303-a759ea27afb8" class="">From Wikipedia</p><p id="16597c61-8dc5-4205-b11a-78ee773db8f2" class="">Statistics How To provides the best definition of CLT, which is:</p><p id="1d4c0a7c-9d31-4621-9219-9acf57e29e7f" class="">“The central limit theorem states that the sampling distribution of the sample mean approaches a normal distribution as the sample size gets larger no matter what the shape of the population distribution.” [1]</p><p id="67670c4a-62aa-4bc3-85fd-0df9a4aa014c" class="">The central limit theorem is important because it is used in hypothesis testing and also to calculate confidence intervals.</p><ol id="d36fa5a7-58cd-4be4-925d-9acad91a1b29" class="numbered-list" start="1"><li>What is the statistical power?</li></ol><p id="0a4c676b-7d95-4a24-9176-225d0f30fda0" class="">‘Statistical power’ refers to the power of a binary hypothesis, which is the probability that the test rejects the null hypothesis given that the alternative hypothesis is true. [2]</p><p id="63e086c3-3d11-4c50-9f76-8e7c33d93231" class="">Image for post</p><ol id="fa8b091d-b27e-4cb1-97ad-aead3103150b" class="numbered-list" start="1"><li>Explain selection bias (with regard to a dataset, not variable selection). Why is it important? How can data management procedures such as missing data handling make it worse?</li></ol><p id="876d57c7-fa4a-4a30-a0af-d9edd65b69fd" class="">Selection bias is the phenomenon of selecting individuals, groups or data for analysis in such a way that proper randomization is not achieved, ultimately resulting in a sample that is not representative of the population.</p><p id="0f16b6a0-16af-496f-a350-680d59c4c97a" class="">Understanding and identifying selection bias is important because it can significantly skew results and provide false insights about a particular population group.</p><p id="a1d8e08f-809f-479e-a797-53a109f5da44" class="">Types of selection bias include:</p><p id="363788a0-f370-4fdd-b89e-5d99e16d3607" class="">sampling bias: a biased sample caused by non-random sampling</p><p id="b0e6c7f4-3dc5-4d41-917d-b7eec834d0d4" class="">time interval: selecting a specific time frame that supports the desired conclusion. e.g. conducting a sales analysis near Christmas.</p><p id="64f3b0b1-238a-4f20-9662-33f710c11178" class="">exposure: includes clinical susceptibility bias, protopathic bias, indication bias. Read more here.</p><p id="20a1a568-c5b5-4bae-ac50-65571e2b4481" class="">data: includes cherry-picking, suppressing evidence, and the fallacy of incomplete evidence.</p><p id="faeee2c9-3056-43e6-9a9f-a3e72a9e5d95" class="">attrition: attrition bias is similar to survivorship bias, where only those that ‘survived’ a long process are included in an analysis, or failure bias, where those that ‘failed’ are only included</p><p id="61b9fcd5-a674-4db3-b9c4-472f57eb6737" class="">observer selection: related to the Anthropic principle, which is a philosophical consideration that any data we collect about the universe is filtered by the fact that, in order for it to be observable, it must be compatible with the conscious and sapient life that observes it. [3]</p><p id="90b0ae7f-e611-4a56-b5ee-b827f56d21cf" class="">Handling missing data can make selection bias worse because different methods impact the data in different ways. For example, if you replace null values with the mean of the data, you adding bias in the sense that you’re assuming that the data is not as spread out as it might actually be.</p><ol id="0c15383b-6797-4ff5-a984-1aa1acedab85" class="numbered-list" start="1"><li>Provide a simple example of how an experimental design can help answer a question about behavior. How does experimental data contrast with observational data?</li></ol><p id="6f3647a7-00d0-4d40-9334-6e770f14896c" class="">Observational data comes from observational studies which are when you observe certain variables and try to determine if there is any correlation.</p><p id="975d8e6f-a078-49ed-b9c1-3bd613b43591" class="">Experimental data comes from experimental studies which are when you control certain variables and hold them constant to determine if there is any causality.</p><p id="f3d69982-2efa-4de2-ae00-3a893eafe0ec" class="">An example of experimental design is the following: split a group up into two. The control group lives their lives normally. The test group is told to drink a glass of wine every night for 30 days. Then research can be conducted to see how wine affects sleep.</p><ol id="b9025807-ff03-4768-a382-31ae714c9e88" class="numbered-list" start="1"><li>Is mean imputation of missing data acceptable practice? Why or why not?</li></ol><p id="5911370e-5775-49fa-9e05-4e504b6162e6" class="">Mean imputation is the practice of replacing null values in a data set with the mean of the data.</p><p id="98d5a677-f0ff-4a9a-88bb-940c42d7cbf9" class="">Mean imputation is generally bad practice because it doesn’t take into account feature correlation. For example, imagine we have a table showing age and fitness score and imagine that an eighty-year-old has a missing fitness score. If we took the average fitness score from an age range of 15 to 80, then the eighty-year-old will appear to have a much higher fitness score that he actually should.</p><p id="861f1ed0-a948-4368-ab8c-8b6ec281eab4" class="">Second, mean imputation reduces the variance of the data and increases bias in our data. This leads to a less accurate model and a narrower confidence interval due to a smaller variance.</p><ol id="cb0780c1-af70-4d26-9e28-cec234c38244" class="numbered-list" start="1"><li>What is an outlier? Explain how you might screen for outliers and what would you do if you found them in your dataset. Also, explain what an inlier is and how you might screen for them and what would you do if you found them in your dataset.</li></ol><p id="85475b64-21c8-405c-a0a4-9bbe07cd5e58" class="">An outlier is a data point that differs significantly from other observations.</p><p id="82f8df74-5709-42b2-871e-7d22f5eb794a" class="">Depending on the cause of the outlier, they can be bad from a machine learning perspective because they can worsen the accuracy of a model. If the outlier is caused by a measurement error, it’s important to remove them from the dataset. There are a couple of ways to identify outliers:</p><p id="bc0afcd2-e1af-4a81-953a-fe8c6ce4f7fc" class="">Z-score/standard deviations: if we know that 99.7% of data in a data set lie within three standard deviations, then we can calculate the size of one standard deviation, multiply it by 3, and identify the data points that are outside of this range. Likewise, we can calculate the z-score of a given point, and if it’s equal to +/- 3, then it’s an outlier.</p><p id="b302de33-6d20-4a2d-aed7-8ebde7ceaacd" class="">Note: that there are a few contingencies that need to be considered when using this method; the data must be normally distributed, this is not applicable for small data sets, and the presence of too many outliers can throw off z-score.</p><p id="4cb345cc-e405-4b3a-ab63-e7d342321bd8" class="">Image for post</p><p id="dae42039-baa9-44fe-88e2-22ed92c9e1cb" class="">Interquartile Range (IQR): IQR, the concept used to build boxplots, can also be used to identify outliers. The IQR is equal to the difference between the 3rd quartile and the 1st quartile. You can then identify if a point is an outlier if it is less than Q1–1.5*IRQ or greater than Q3 + 1.5*IQR. This comes to approximately 2.698 standard deviations.</p><p id="85e9be3c-12d7-47d3-8476-804929869b4c" class="">Image for post</p><p id="404789ae-deac-4fb4-82f6-94b94da491d0" class="">Photo from Michael Galarnyk</p><p id="d80b3ca0-3249-4177-9b7e-049fe7b0d4cb" class="">Other methods include DBScan clustering, Isolation Forests, and Robust Random Cut Forests.</p><p id="230400c4-d979-4cbe-8a2e-b4b756c6a814" class="">An inlier is a data observation that lies within the rest of the dataset and is unusual or an error. Since it lies in the dataset, it is typically harder to identify than an outlier and requires external data to identify them. Should you identify any inliers, you can simply remove them from the dataset to address them.</p><ol id="a212c409-d670-4927-b28d-eb48900da871" class="numbered-list" start="1"><li>How do you handle missing data? What imputation techniques do you recommend?</li></ol><p id="86e2fb36-7281-49b9-84b7-ee26713173bc" class="">There are several ways to handle missing data:</p><p id="d32d52fe-42b7-4d29-97b0-706704130467" class="">Delete rows with missing data</p><p id="d2a61ce6-8aa1-4162-b4bd-bdc2d9d19c43" class="">Mean/Median/Mode imputation</p><p id="19c1d1ce-06ce-43e9-8455-fd17593c0b32" class="">Assigning a unique value</p><p id="c6400304-7850-42ed-8a3d-e3afa36c6886" class="">Predicting the missing values</p><p id="bd85b0c8-30ec-4ac5-8333-6afacc3b1a5c" class="">Using an algorithm which supports missing values, like random forests</p><p id="3622d6c1-69d5-4f6e-aa4f-f0b319f3b731" class="">The best method is to delete rows with missing data as it ensures that no bias or variance is added or removed, and ultimately results in a robust and accurate model. However, this is only recommended if there’s a lot of data to start with and the percentage of missing values is low.</p><ol id="85e1eeb4-fbeb-48aa-b361-5aae82d4b083" class="numbered-list" start="1"><li>You have data on the duration of calls to a call center. Generate a plan for how you would code and analyze these data. Explain a plausible scenario for what the distribution of these durations might look like. How could you test, even graphically, whether your expectations are borne out?</li></ol><p id="ac1b4009-482c-4d96-b436-691d3ece2234" class="">First I would conduct EDA — Exploratory Data Analysis to clean, explore, and understand my data. See my article on EDA here. As part of my EDA, I could compose a histogram of the duration of calls to see the underlying distribution.</p><p id="0a03cf49-f071-4dc1-8e90-bc53594cbd36" class="">My guess is that the duration of calls would follow a lognormal distribution (see below). The reason that I believe it’s positively skewed is because the lower end is limited to 0 since a call can’t be negative seconds. However, on the upper end, it’s likely for there to be a small proportion of calls that are extremely long relatively.</p><p id="656e8ab0-5a4e-4c5a-941a-248cea9288b7" class="">Image for post</p><p id="a350ff46-774f-42cb-aaa8-cecfcc3d2d9a" class="">Lognormal Distribution Example</p><p id="4ca675cc-81f1-4609-80d7-78977294119c" class="">You could use a QQ plot to confirm whether the duration of calls follows a lognormal distribution or not. See here to learn more about QQ plots.</p><ol id="701f3db8-f1b9-4935-bcea-12f42d5f9f1c" class="numbered-list" start="1"><li>Explain likely differences between administrative datasets and datasets gathered from experimental studies. What are likely problems encountered with administrative data? How do experimental methods help alleviate these problems? What problem do they bring?</li></ol><p id="b83d5fbd-f319-4239-a4a9-485f59214dd9" class="">Administrative datasets are typically datasets used by governments or other organizations for non-statistical reasons.</p><p id="cfb29507-6a64-4a79-b602-5af92e78b879" class="">Administrative datasets are usually larger and more cost-efficient than experimental studies. They are also regularly updated assuming that the organization associated with the administrative dataset is active and functioning. At the same time, administrative datasets may not capture all of the data that one may want and may not be in the desired format either. It is also prone to quality issues and missing entries.</p><ol id="da57ffa6-fe4e-48d6-bb59-6a1701dc956d" class="numbered-list" start="1"><li>You are compiling a report for user content uploaded every month and notice a spike in uploads in October. In particular, a spike in picture uploads. What might you think is the cause of this, and how would you test it?</li></ol><p id="c32fe9d5-c666-4a4a-8d44-8c7fbe0e6621" class="">There are a number of potential reasons for a spike in photo uploads:</p><p id="8e6f15f7-81a7-405b-b928-8a8dfab4cb19" class="">A new feature may have been implemented in October which involves uploading photos and gained a lot of traction by users. For example, a feature that gives the ability to create photo albums.</p><p id="29fe67aa-5308-4048-bd46-ac0dc74dc614" class="">Similarly, it’s possible that the process of uploading photos before was not intuitive and was improved in the month of October.</p><p id="0b8b3ce5-1f9f-4aa9-ba04-8e99f4845dd5" class="">There may have been a viral social media movement that involved uploading photos that lasted for all of October. Eg. Movember but something more scalable.</p><p id="930a33c4-7946-4021-8514-86948945581e" class="">It’s possible that the spike is due to people posting pictures of themselves in costumes for Halloween.</p><p id="ede2dbdc-af30-405c-8587-1ae35590f3c2" class="">The method of testing depends on the cause of the spike, but you would conduct hypothesis testing to determine if the inferred cause is the actual cause.</p><ol id="2584829e-f9e2-4d51-982d-7c3ebf496b4f" class="numbered-list" start="1"><li>You’re about to get on a plane to Seattle. You want to know if you should bring an umbrella. You call 3 random friends of yours who live there and ask each independently if it’s raining. Each of your friends has a 2/3 chance of telling you the truth and a 1/3 chance of messing with you by lying. All 3 friends tell you that “Yes” it is raining. What is the probability that it’s actually raining in Seattle?</li></ol><p id="0b2a5498-aec3-428c-884f-0d83ba8497d3" class="">You can tell that this question is related to Bayesian theory because of the last statement which essentially follows the structure, “What is the probability A is true given B is true?” Therefore we need to know the probability of it raining in London on a given day. Let’s assume it’s 25%.</p><p id="7bf9deb0-34c3-49ad-a785-38e1c5754a85" class="">P(A) = probability of it raining = 25%</p><p id="ff172259-f215-4f2b-86ca-9938d498cbfa" class="">P(B) = probability of all 3 friends say that it’s raining</p><p id="933153a5-06ba-4853-81e2-e29556b21ee6" class="">P(A|B) probability that it’s raining given they’re telling that it is raining</p><p id="f4ae5ff0-bdab-4116-859b-3741891bb0d9" class="">P(B|A) probability that all 3 friends say that it’s raining given it’s raining = (2/3)³ = 8/27</p><p id="3a3ae48f-ec5a-4490-9ede-3485d977c83d" class="">Step 1: Solve for P(B)</p><p id="0fddb5a9-b9d9-4b0d-a64a-5eca51d0460f" class="">P(A|B) = P(B|A) * P(A) / P(B), can be rewritten as</p><p id="f7df70a3-8c04-4ac9-88bd-4e93ca20020e" class="">P(B) = P(B|A) * P(A) + P(B|not A) * P(not A)</p><p id="877cf729-5c50-41d0-8e72-abcd42bca86b" class="">P(B) = (2/3)³ * 0.25 + (1/3)³ * 0.75 = 0.25*8/27 + 0.75*1/27</p><p id="296fda0a-c8d2-4e24-a440-c7da5ba488ba" class="">Step 2: Solve for P(A|B)</p><p id="89fb6285-3a18-406a-8dc4-68a22106e19a" class="">P(A|B) = 0.25 * (8/27) / ( 0.25*8/27 + 0.75*1/27)</p><p id="0c56f78d-c3ad-424b-8a36-ec971df1a795" class="">P(A|B) = 8 / (8 + 3) = 8/11</p><p id="0ccd8d40-6162-42da-b8ea-8c2fd8fa3dd4" class="">Therefore, if all three friends say that it’s raining, then there’s an 8/11 chance that it’s actually raining.</p><ol id="844a914e-0767-4339-9d5f-ee3ffe69dfaf" class="numbered-list" start="1"><li>There’s one box — has 12 black and 12 red cards, 2nd box has 24 black and 24 red; if you want to draw 2 cards at random from one of the 2 boxes, which box has the higher probability of getting the same color? Can you tell intuitively why the 2nd box has a higher probability</li></ol><p id="20a00df4-ca7a-45b6-852b-791b0cd613ad" class="">The box with 24 red cards and 24 black cards has a higher probability of getting two cards of the same color. Let’s walk through each step.</p><p id="cf89885e-40c8-4422-8647-39deb433d6f2" class="">Let’s say the first card you draw from each deck is a red Ace.</p><p id="3d7655a7-469f-40bf-87d2-2de1a63d0908" class="">This means that in the deck with 12 reds and 12 blacks, there’s now 11 reds and 12 blacks. Therefore your odds of drawing another red are equal to 11/(11+12) or 11/23.</p><p id="e5733318-5faf-458f-a749-c0b1a970337d" class="">In the deck with 24 reds and 24 blacks, there would then be 23 reds and 24 blacks. Therefore your odds of drawing another red are equal to 23/(23+24) or 23/47.</p><p id="800882dd-a5be-44d4-9ce3-13fe96afe1da" class="">Since 23/47 &gt; 11/23, the second deck with more cards has a higher probability of getting the same two cards.</p><ol id="b57b6fb2-568d-4ab0-a22b-b1a95bf52f14" class="numbered-list" start="1"><li>What is: lift, KPI, robustness, model fitting, design of experiments, 80/20 rule?</li></ol><p id="614307fd-2075-43b3-a2e2-77ca30abf31e" class="">Lift: lift is a measure of the performance of a targeting model measured against a random choice targeting model; in other words, lift tells you how much better your model is at predicting things than if you had no model.</p><p id="2bf1f395-eafa-4281-ade4-60b80258c15c" class="">KPI: stands for Key Performance Indicator, which is a measurable metric used to determine how well a company is achieving its business objectives. Eg. error rate.</p><p id="16342b9f-3589-4898-ac2d-d2cef1d53c9e" class="">Robustness: generally robustness refers to a system’s ability to handle variability and remain effective.</p><p id="e00e4236-c6df-469f-bce4-1729d11ab2df" class="">Model fitting: refers to how well a model fits a set of observations.</p><p id="37cdc56c-9220-4cbd-8373-4654b7daf5a2" class="">Design of experiments: also known as DOE, it is the design of any task that aims to describe and explain the variation of information under conditions that are hypothesized to reflect the variable. [4] In essence, an experiment aims to predict an outcome based on a change in one or more inputs (independent variables).</p><p id="c3b249ef-45aa-4a22-b5a3-d59ee04d5fef" class="">80/20 rule: also known as the Pareto principle; states that 80% of the effects come from 20% of the causes. Eg. 80% of sales come from 20% of customers.</p><ol id="c7482562-a4b4-4ab5-9301-4f713dc3c03f" class="numbered-list" start="1"><li>Define quality assurance, six sigma.</li></ol><p id="d1531582-d606-47ee-befa-405c602398bc" class="">Quality assurance: an activity or set of activities focused on maintaining a desired level of quality by minimizing mistakes and defects.</p><p id="3dca46a6-8596-455c-b578-456e9dd3f5b2" class="">Six sigma: a specific type of quality assurance methodology composed of a set of techniques and tools for process improvement. A six sigma process is one in which 99.99966% of all outcomes are free of defects.</p><ol id="d48b1806-a2da-4b54-90b9-2bb59acef452" class="numbered-list" start="1"><li>Give examples of data that does not have a Gaussian distribution, nor log-normal.</li></ol><p id="3d290532-d851-42c8-8f48-2b43dfac7ed9" class="">Any type of categorical data won’t have a gaussian distribution or lognormal distribution.</p><p id="ba86c276-147e-497b-9e39-af8293abf6ed" class="">Exponential distributions — eg. the amount of time that a car battery lasts or the amount of time until an earthquake occurs.</p><ol id="d35943a2-1ee9-4133-a7f4-b55500296af4" class="numbered-list" start="1"><li>What is root cause analysis? How to identify a cause vs. a correlation? Give examples</li></ol><p id="5728f5dd-49bf-4451-9fb8-670927a3dfeb" class="">Root cause analysis: a method of problem-solving used for identifying the root cause(s) of a problem [5]</p><p id="5a093f21-a081-467e-953e-e0e1b2c5cf33" class="">Correlation measures the relationship between two variables, range from -1 to 1. Causation is when a first event appears to have caused a second event. Causation essentially looks at direct relationships while correlation can look at both direct and indirect relationships.</p><p id="7cc0f5f2-b2a7-4f2e-9694-c74008a7b9f5" class="">Example: a higher crime rate is associated with higher sales in ice cream in Canada, aka they are positively correlated. However, this doesn’t mean that one causes another. Instead, it’s because both occur more when it’s warmer outside.</p><p id="5f24d6b1-84f2-454b-8f40-335cd88cb7e7" class="">You can test for causation using hypothesis testing or A/B testing.</p><ol id="962c1ceb-fd19-4910-8a0a-c8d77751ae58" class="numbered-list" start="1"><li>Give an example where the median is a better measure than the mean</li></ol><p id="3154b555-d72a-4a2d-99f6-1cd971ab5282" class="">When there are a number of outliers that positively or negatively skew the data.</p><ol id="6a3ebe7e-d765-493a-b4e4-2d77b7a66ff2" class="numbered-list" start="1"><li>Given two fair dices, what is the probability of getting scores that sum to 4? to 8?</li></ol><p id="7c008636-4d51-45c9-9662-a414e38b184a" class="">There are 4 combinations of rolling a 4 (1+3, 3+1, 2+2):</p><p id="1b648850-46b6-4964-9e78-868440cee49f" class="">P(rolling a 4) = 3/36 = 1/12</p><p id="25e8f068-cca6-456a-a3d2-112eafd38f65" class="">There are combinations of rolling an 8 (2+6, 6+2, 3+5, 5+3, 4+4):</p><p id="5fe1bbd7-080d-47f1-a319-2262557678eb" class="">P(rolling an 8) = 5/36</p><ol id="d6ef9d2e-c67d-420b-b6b2-d616367c15c2" class="numbered-list" start="1"><li>What is the Law of Large Numbers?</li></ol><p id="46a8f00c-b2bd-4785-8f4a-ca0a30ba68cf" class="">The Law of Large Numbers is a theory that states that as the number of trials increases, the average of the result will become closer to the expected value.</p><p id="55ed8edc-a1a3-4200-91f7-bc0566fb5c57" class="">Eg. flipping heads from fair coin 100,000 times should be closer to 0.5 than 100 times.</p><ol id="d78c5d23-f653-4864-bf22-5234925ef6ed" class="numbered-list" start="1"><li>How do you calculate the needed sample size?</li></ol><p id="c50f8c39-ae91-4ffc-b107-b6590940b372" class="">Image for post</p><p id="2bf4a0de-c1bc-4808-a195-2d4025d62bd5" class="">Formula for margin of error</p><p id="34effc75-1df0-4225-b002-4a97e0a5eb44" class="">You can use the margin of error (ME) formula to determine the desired sample size.</p><p id="cef672c9-2d87-4083-a064-098cb99141bc" class="">t/z = t/z score used to calculate the confidence interval</p><p id="9fe35035-77b9-4900-980b-a92962eb9e7a" class="">ME = the desired margin of error</p><p id="3b18e690-bedb-4cfa-a84f-b27740bd3a4b" class="">S = sample standard deviation</p><ol id="2df91ad4-253b-4074-8573-efefb7fd69e1" class="numbered-list" start="1"><li>When you sample, what bias are you inflicting?</li></ol><p id="a983bd45-88cb-4789-b3b2-484b77d65995" class="">Potential biases include the following:</p><p id="4f88ea9d-4ba5-474e-affb-61523a6f277c" class="">Sampling bias: a biased sample caused by non-random sampling</p><p id="0fcd25a6-0a81-4646-bcaa-1fdf752e2435" class="">Under coverage bias: sampling too few observations</p><p id="26c3212a-da21-44c7-be84-14661b018531" class="">Survivorship bias: error of overlooking observations that did not make it past a form of selection process.</p><ol id="0b9c1978-e6b9-45f3-8648-49277863d59d" class="numbered-list" start="1"><li>How do you control for biases?</li></ol><p id="d53f4a95-00da-488b-b7a4-7c4d2d35ec58" class="">There are many things that you can do to control and minimize bias. Two common things include randomization, where participants are assigned by chance, and random sampling, sampling in which each member has an equal probability of being chosen.</p><ol id="36cdc2d2-627e-40d1-a040-0665bea05670" class="numbered-list" start="1"><li>What are confounding variables?</li></ol><p id="97863308-0356-4556-bd4c-ee86720dc1d1" class="">A confounding variable, or a confounder, is a variable that influences both the dependent variable and the independent variable, causing a spurious association, a mathematical relationship in which two or more variables are associated but not causally related.</p><ol id="ecedf14c-8bef-46c7-8614-75ba9213b118" class="numbered-list" start="1"><li>What is A/B testing?</li></ol><p id="b31f5b39-36dd-4f7b-a39e-9e93dc19df1f" class="">A/B testing is a form of hypothesis testing and two-sample hypothesis testing to compare two versions, the control and variant, of a single variable. It is commonly used to improve and optimize user experience and marketing.</p><ol id="a2b9bdfe-9a14-4341-951d-6c250d18fd77" class="numbered-list" start="1"><li>Infection rates at a hospital above a 1 infection per 100 person-days at risk are considered high. A hospital had 10 infections over the last 1787 person-days at risk. Give the p-value of the correct one-sided test of whether the hospital is below the standard.</li></ol><p id="d71dd9b8-0ff3-45b0-8439-23d68d2038bb" class="">Since we looking at the number of events (# of infections) occurring within a given timeframe, this is a Poisson distribution question.</p><p id="c81f471e-c309-4470-bfe4-7d420df768a8" class="">Image for post</p><p id="6e9f42b7-7ec7-4a8b-af12-9522eccb993d" class="">The probability of observing k events in an interval</p><p id="effe0b0c-a91f-4edd-afc7-640ba96fa760" class="">Null (H0): 1 infection per person-days</p><p id="e82b9df8-96a1-4a93-b637-dfa275c13082" class="">Alternative (H1): &gt;1 infection per person-days</p><p id="a9b748c0-27d1-40c2-b869-572f3123fd3b" class="">k (actual) = 10 infections</p><p id="fc45e507-36f3-495a-80fb-abd75b559dec" class="">lambda (theoretical) = (1/100)*1787</p><p id="16e95b44-1711-4071-8597-d7a020b52e6c" class="">p = 0.032372 or 3.2372% calculated using .poisson() in excel or ppois in R</p><p id="fa7ca137-3384-4333-8cb2-85a55906e007" class="">Since p-value &lt; alpha (assuming 5% level of significance), we reject the null and conclude that the hospital is below the standard.</p><ol id="1babcd75-75a8-45a2-bb8c-4e067c89ab5f" class="numbered-list" start="1"><li>You roll a biased coin (p(head)=0.8) five times. What’s the probability of getting three or more heads?</li></ol><p id="7b266ada-f1cb-4398-b83a-7f5cc6815848" class="">Use the General Binomial Probability formula to answer this question:</p><p id="d903cc0b-87b4-4b61-a752-f2c1de301fe2" class="">Image for post</p><p id="3a66f6f9-c771-4be6-853e-80d78ccef9f1" class="">General Binomial Probability Formula</p><p id="a279f815-e257-46ce-893b-7ece380e5a9e" class="">p = 0.8</p><p id="8c499ccc-587d-4c06-ad7e-2dd2167b11d7" class="">n = 5</p><p id="b6f175a9-be82-48ea-860c-74fa2d415794" class="">k = 3,4,5</p><p id="9aab9f96-0003-497a-8845-9af55bb75eb2" class="">P(3 or more heads) = P(3 heads) + P(4 heads) + P(5 heads) = 0.94 or 94%</p><ol id="6cad3ce4-2ee4-4723-b9dc-b9b7dea0e7ad" class="numbered-list" start="1"><li>A random variable X is normal with mean 1020 and a standard deviation 50. Calculate P(X&gt;1200)</li></ol><p id="e4287249-aa58-48a5-9757-26fcb0a26936" class="">Using Excel…</p><p id="495a688f-6b4c-4be2-be55-02d7b8c45a8d" class="">p =1-norm.dist(1200, 1020, 50, true)</p><p id="700f4ea4-4a42-478c-bbca-fe1405ce68e8" class="">p= 0.000159</p><ol id="61b453e8-d2bf-4048-8768-c444cdc9b433" class="numbered-list" start="1"><li>Consider the number of people that show up at a bus station is Poisson with mean 2.5/h. What is the probability that at most three people show up in a four hour period?</li></ol><p id="5ebf1e97-97c2-40d9-b9f8-95b008fdac4c" class="">x = 3</p><p id="daa40824-e187-4c8f-8f2f-921b47931aea" class="">mean = 2.5*4 = 10</p><p id="605f9c64-1714-417f-8ebf-c6d6eb209099" class="">using Excel…</p><p id="07a87927-1b94-4c79-a35f-4b52502ed36e" class="">p = poisson.dist(3,10,true)</p><p id="6e6ffe1a-932f-49c4-b289-b6879d3dfb9b" class="">p = 0.010336</p><ol id="62e887f0-b99d-4a4a-b89d-6715ea243352" class="numbered-list" start="1"><li>An HIV test has a sensitivity of 99.7% and a specificity of 98.5%. A subject from a population of prevalence 0.1% receives a positive test result. What is the precision of the test (i.e the probability he is HIV positive)?</li></ol><p id="98421b71-ab1b-4d18-9274-02d0dc20eb81" class="">Image for post</p><p id="47079f15-56a1-4159-877d-51b67d02948f" class="">Equation for Precision (PV)</p><p id="59b28400-1199-41eb-b42c-4e284ff682b6" class="">Precision = Positive Predictive Value = PV</p><p id="a3b09960-0ca8-4f4a-a9b6-b6c067d04c73" class="">PV = (0.001*0.997)/[(0.001*0.997)+((1–0.001)*(1–0.985))]</p><p id="ee79dce0-f07e-44bd-b32a-6aeb80ab2136" class="">PV = 0.0624 or 6.24%</p><p id="8a9509a6-56ac-4972-8cca-9469ba109bbb" class="">See more about this equation here.</p><ol id="7dc8a695-56c7-4e8b-b882-426f5686b0e2" class="numbered-list" start="1"><li>You are running for office and your pollster polled hundred people. Sixty of them claimed they will vote for you. Can you relax?</li></ol><p id="df8ebda6-0450-4f6c-8e5b-6402e35ba136" class="">Assume that there’s only you and one other opponent.</p><p id="82c9d0a0-de64-4c99-a082-4643793d17f0" class="">Also, assume that we want a 95% confidence interval. This gives us a z-score of 1.96.</p><p id="c1b5f345-3b22-4137-ada4-12428cece845" class="">Image for post</p><p id="96255afc-3ef4-484f-bf50-723bed1c0578" class="">Confidence interval formula</p><p id="5d25c4bc-d3e4-403b-86d4-b5e3f59d4984" class="">p-hat = 60/100 = 0.6</p><p id="dc734a9a-0ebb-411d-b01c-72cdbcc7d319" class="">z* = 1.96</p><p id="1122e874-9d52-4040-945d-390653e8fb4b" class="">n = 100</p><p id="e643338d-5021-4d7f-93d8-a7f91575765e" class="">This gives us a confidence interval of [50.4,69.6]. Therefore, given a confidence interval of 95%, if you are okay with the worst scenario of tying then you can relax. Otherwise, you cannot relax until you got 61 out of 100 to claim yes.</p><ol id="047b5d04-1859-4e48-80e0-419914b7fe32" class="numbered-list" start="1"><li>Geiger counter records 100 radioactive decays in 5 minutes. Find an approximate 95% interval for the number of decays per hour.</li></ol><p id="7603494d-cf1c-4112-bf7a-40c1f5ef21dd" class="">Since this is a Poisson distribution question, mean = lambda = variance, which also means that standard deviation = square root of the mean</p><p id="3d5113b3-288b-492a-9d17-af59042c143c" class="">a 95% confidence interval implies a z score of 1.96</p><p id="57fc4339-a657-43a8-8cc2-da21bdce6b42" class="">one standard deviation = 10</p><p id="790cff01-e845-4f1e-a0a6-5a701f7c33e5" class="">Therefore the confidence interval = 100 +/- 19.6 = [964.8, 1435.2]</p><ol id="5f9ef3c7-2501-4987-b077-b86908fc1fc3" class="numbered-list" start="1"><li>The homicide rate in Scotland fell last year to 99 from 115 the year before. Is this reported change really noteworthy?</li></ol><p id="e1c8b7b4-8d16-4236-a252-fec8b50d1821" class="">Since this is a Poisson distribution question, mean = lambda = variance, which also means that standard deviation = square root of the mean</p><p id="0c6c37f9-0c5d-4ce2-b641-9ad1d9f509c8" class="">a 95% confidence interval implies a z score of 1.96</p><p id="526954f6-f9a7-4c96-b04b-f175e732e915" class="">one standard deviation = sqrt(115) = 10.724</p><p id="ffd0383e-5e89-401e-83c1-b551768ead5d" class="">Therefore the confidence interval = 115+/- 21.45 = [93.55, 136.45]. Since 99 is within this confidence interval, we can assume that this change is not very noteworthy.</p><ol id="a1df6402-0535-41f3-b599-080c512dd81c" class="numbered-list" start="1"><li>Consider influenza epidemics for two-parent heterosexual families. Suppose that the probability is 17% that at least one of the parents has contracted the disease. The probability that the father has contracted influenza is 12% while the probability that both the mother and father have contracted the disease is 6%. What is the probability that the mother has contracted influenza?</li></ol><p id="42f9a07b-f90c-430d-b38d-e9248a71ce4f" class="">Using the General Addition Rule in probability:</p><p id="38276997-a1ac-439e-ad4f-631456118256" class="">P(mother or father) = P(mother) + P(father) — P(mother and father)</p><p id="430e6001-d488-4014-b118-501d5bcdeb40" class="">P(mother) = P(mother or father) + P(mother and father) — P(father)</p><p id="3b5a3ba6-da04-4b5e-971f-9214c364f6d6" class="">P(mother) = 0.17 + 0.06–0.12</p><p id="8f0c36c9-0496-4594-8974-9204f3771975" class="">P(mother) = 0.11</p><ol id="1e2be3d2-43a2-43f0-b154-43d36bc86929" class="numbered-list" start="1"><li>Suppose that diastolic blood pressures (DBPs) for men aged 35–44 are normally distributed with a mean of 80 (mm Hg) and a standard deviation of 10. About what is the probability that a random 35–44 year old has a DBP less than 70?</li></ol><p id="d6c4fc0a-2dec-4186-be46-9d6cff005155" class="">Since 70 is one standard deviation below the mean, take the area of the Gaussian distribution to the left of one standard deviation.</p><p id="0c0161b1-b70b-4302-9a82-75fae027f313" class="">= 2.3 + 13.6 = 15.9%</p><ol id="16bd8b65-7a21-414d-8b28-9eedcf8fe5c2" class="numbered-list" start="1"><li>In a population of interest, a sample of 9 men yielded a sample average brain volume of 1,100cc and a standard deviation of 30cc. What is a 95% Student’s T confidence interval for the mean brain volume in this new population?</li></ol><p id="6905d509-6b1a-4ed3-a9f0-ee108b2f1cdf" class="">Image for post</p><p id="91dd3a54-8479-497d-8edc-65316a007a67" class="">Confidence interval for sample</p><p id="3d012b91-4366-4db9-b45a-164d9ee11d38" class="">Given a confidence level of 95% and degrees of freedom equal to 8, the t-score = 2.306</p><p id="a65c96d3-531f-4774-94ed-15807b55d96f" class="">Confidence interval = 1100 +/- 2.306*(30/3)</p><p id="4faf13e9-c05e-4bda-9cdd-e2107a38c225" class="">Confidence interval = [1076.94, 1123.06]</p><ol id="a48a005c-b39a-44a8-80fc-a06d6082bff8" class="numbered-list" start="1"><li>A diet pill is given to 9 subjects over six weeks. The average difference in weight (follow up — baseline) is -2 pounds. What would the standard deviation of the difference in weight have to be for the upper endpoint of the 95% T confidence interval to touch 0?</li></ol><p id="43cd8a25-ee5a-45c2-bb1a-c1f062389ca1" class="">Upper bound = mean + t-score*(standard deviation/sqrt(sample size))</p><p id="a67eb8d9-ce33-4870-848b-d0dc65d5ddd3" class="">0 = -2 + 2.306*(s/3)</p><p id="cfe12de0-560d-4264-b410-74324e1c6764" class="">2 = 2.306 * s / 3</p><p id="10a7905b-5f45-4b25-8f38-6108f70776bf" class="">s = 2.601903</p><p id="bb5f02da-4752-4eee-82b5-77e8df5bb98b" class="">Therefore the standard deviation would have to be at least approximately 2.60 for the upper bound of the 95% T confidence interval to touch 0.</p><ol id="a4381d25-dbfc-4622-8eb2-a40dbb0b71fb" class="numbered-list" start="1"><li>In a study of emergency room waiting times, investigators consider a new and the standard triage systems. To test the systems, administrators selected 20 nights and randomly assigned the new triage system to be used on 10 nights and the standard system on the remaining 10 nights. They calculated the nightly median waiting time (MWT) to see a physician. The average MWT for the new system was 3 hours with a variance of 0.60 while the average MWT for the old system was 5 hours with a variance of 0.68. Consider the 95% confidence interval estimate for the differences of the mean MWT associated with the new system. Assume a constant variance. What is the interval? Subtract in this order (New System — Old System).</li></ol><p id="c325d0ad-6b42-41a8-a485-91823fa62854" class="">See here for full tutorial on finding the Confidence Interval for Two Independent Samples.</p><p id="907cf258-86d1-401e-8f68-a3b388338b34" class="">Image for post</p><p id="5e237db4-cf7b-469f-967b-4817bfe6be2c" class="">Confidence Interval = mean +/- t-score * standard error (see above)</p><p id="ad5ee758-4645-465b-b856-9e3133f7a096" class="">mean = new mean — old mean = 3–5 = -2</p><p id="78e668f9-0654-4067-b78c-5683186563d7" class="">t-score = 2.101 given df=18 (20–2) and confidence interval of 95%</p><p id="a60fcacb-cdc2-41cf-b3f6-9bba678fc456" class="">Image for post</p><p id="cfea8416-049d-4959-88bd-8f59cb4a1ef1" class="">standard error = sqrt((0.⁶²*9+0.⁶⁸²*9)/(10+10–2)) * sqrt(1/10+1/10)</p><p id="06760d55-85bf-4c61-852b-d3c37a625c77" class="">standard error = 0.352</p><p id="4bb837b4-6e37-48e4-aa15-732483b1ed3b" class="">confidence interval = [-2.75, -1.25]</p><ol id="b54a6e28-0e2e-4768-94c0-45cc6d43e936" class="numbered-list" start="1"><li>To further test the hospital triage system, administrators selected 200 nights and randomly assigned a new triage system to be used on 100 nights and a standard system on the remaining 100 nights. They calculated the nightly median waiting time (MWT) to see a physician. The average MWT for the new system was 4 hours with a standard deviation of 0.5 hours while the average MWT for the old system was 6 hours with a standard deviation of 2 hours. Consider the hypothesis of a decrease in the mean MWT associated with the new treatment. What does the 95% independent group confidence interval with unequal variances suggest vis a vis this hypothesis? (Because there’s so many observations per group, just use the Z quantile instead of the T.)</li></ol><p id="1f74569e-df74-400a-8de9-07b2620ac06a" class="">Assuming we subtract in this order (New System — Old System):</p><p id="bd72f31b-c798-4a9e-aa9d-729457c15fbf" class="">Image for post</p><p id="9fc7eca2-1f83-420c-be9b-587f619b752e" class="">confidence interval formula for two independent samples</p><p id="42f74228-6962-451e-a797-c4fab6a15469" class="">mean = new mean — old mean = 4–6 = -2</p><p id="54d33143-3581-4a8a-a4b0-39c5f9cc5d4e" class="">z-score = 1.96 confidence interval of 95%</p><p id="9e0f5bd5-71e0-4f28-a8d2-32612eb96953" class="">Image for post</p><ol id="3712c8a8-ba78-4ab7-acc0-145f121a1338" class="numbered-list" start="1"><li>error = sqrt((0.⁵²*99+²²*99)/(100+100–2)) * sqrt(1/100+1/100)</li></ol><p id="db84fda7-be81-41ac-b865-cf842851a0c1" class="">standard error = 0.205061</p><p id="9997b48e-4b82-46b0-a488-c189a5121290" class="">lower bound = -2–1.96*0.205061 = -2.40192</p><p id="2e449c86-b5d6-4376-a42a-ae87ed59240e" class="">upper bound = -2+1.96*0.205061 = -1.59808</p><p id="1c0d2c8a-f2e4-4427-a547-654d9c1385ff" class="">confidence interval = [-2.40192, -1.59808]</p></div></article></body></html>
